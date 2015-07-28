@@ -6,7 +6,7 @@ classdef MatlabTheme < handle
     
     methods (Access = public, Static = true)
         function ApplyTheme()
-            MatlabTheme.ApplyColorSetting();
+            MatlabTheme.ApplyColorSettings();
         end
     end
     
@@ -19,17 +19,27 @@ classdef MatlabTheme < handle
             end
         end
         
-        function ApplyColorSetting()
+        function ApplyColorSettings()
             colorSettingVec = MatlabTheme.makeCsVec();
+            % Make sure "use system colors" is off
+            MatlabTheme.turnOffSystemColors();
+            % Apply all colors:
             for ind1 = 1:size(colorSettingVec,1)
-               % Change the value:
-                com.mathworks.services.PrefsAWT.setColorPref(...
-                colorSettingVec(ind1).colorPrefName,...
-                colorSettingVec(ind1).colorPrefSetting);
-               % Notify the listeners (for change to occur):
-                com.mathworks.services.ColorPrefs.notifyColorListeners(...
-                  colorSettingVec(ind1).colorPrefName);  
+                MatlabTheme.applyColor(colorSettingVec(ind1).colorPrefName,...
+                                       colorSettingVec(ind1).colorPrefSetting);
             end
+        end
+        
+        function turnOffSystemColors()
+            sysOffPref = colorSetting(colorSetting.USE_SYSTEM_COLORS,false);
+            com.mathworks.services.Prefs.setBooleanPref(sysOffPref.colorPrefName,sysOffPref.colorPrefSetting);         
+        end
+        
+        function applyColor(prefName,prefSetting)
+           % Change the value:
+           com.mathworks.services.PrefsAWT.setColorPref(prefName,prefSetting);
+           % Notify the listeners (for change to occur):
+           com.mathworks.services.ColorPrefs.notifyColorListeners(prefName);  
         end
          
     end
