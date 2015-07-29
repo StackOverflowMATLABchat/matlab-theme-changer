@@ -10,7 +10,7 @@ classdef MatlabTheme < handle
         end
     end
     
-    methods (Access = private, Static = true)
+    methods (Access = protected, Static = true)
         function cs = makeCsVec()
             nCs = size(MatlabTheme.cs,1);
             cs = repmat(colorSetting(MatlabTheme.cs{1,1},MatlabTheme.cs{1,2}),[nCs,1]);
