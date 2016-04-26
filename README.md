@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer.svg)](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer/blob/master/LICENSE.md) [![Issues](https://img.shields.io/github/issues/StackOverflowMATLABchat/matlab-theme-changer.svg)](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer/issues)
+[![License](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer.svg)](https://github.com/StackOverflowMATLABchat/matlab-theme-changer/blob/master/LICENSE.md) [![Issues](https://img.shields.io/github/issues/StackOverflowMATLABchat/matlab-theme-changer.svg)](https://github.com/StackOverflowMATLABchat/matlab-theme-changer/issues)
 # MATLAB Theme Changer
 This is a proof-of-concept MATLAB color scheme changer that works when MATLAB is open.
 
@@ -21,3 +21,6 @@ For a GUI experience, run `matlabThemeChooser.m`. Note that this method requires
 *Preferences > MATLAB > Colors* and *Preferences > MATLAB > Colors > Programming Tools* menus.
 - See also [Scott Lowe's MATLAB Schemer](https://github.com/scottclowe/matlab-schemer).
 - Changes are documented in **CHANGES.md**.
+
+## 3rd party code:
+- This repository contains a theme based on Darcula by JetBrains / Konstantin Bulenkov.

@@ -1,4 +1,4 @@
-classdef ColorSetting < handle & ColorSettingsEnum
+classdef ColorSetting < handle
     %COLORSETTING Summary of this class goes here
     %   Detailed explanation goes here    
     properties (Constant = true, Access = public)
