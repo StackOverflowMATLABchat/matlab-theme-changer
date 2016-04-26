@@ -32,14 +32,26 @@ for ind1=1:size(C,1)
         case 'S' % string
             com.mathworks.services.Prefs.setStringPref(prefname,prefval);            
         case 'F' % font - F0 12 Dialog
-            if strcmp(prefname,'Desktop.Font.Text')
-            	com.mathworks.services.Prefs.setBooleanPref('GeneralTextUseSystemFont', false);
-            end
+            % Building a Java font object from the input:
             val = strsplit(prefval,' ');
             newFont = java.awt.Font(val{3}, str2double(val{1}), str2double(val{2}));
-            com.mathworks.services.Prefs.setFontPref(prefname, newFont);
-            disp(['[' 8 '- Notice:]' 8 ' you have changed a font preference (' prefname ...
-                ') - a restart of MATLAB is required to see changes.'])
+            % Setting-specific handling:
+            switch prefname
+              % Fonts corresponding to existing cases will be committed and 
+              % applied automatically.
+              case 'Desktop.Font.Text'
+                com.mathworks.services.Prefs.setBooleanPref('GeneralTextUseSystemFont', false);
+                com.mathworks.services.FontPrefs.setTextFont(newFont);
+              case 'Desktop.Font.Code'
+                com.mathworks.services.FontPrefs.setCodeFont(newFont);
+              otherwise
+                % Commit font setting to matlab.prf:
+                com.mathworks.services.Prefs.setFontPref(prefname, newFont);
+                disp(['[' 8 '- Notice:]' 8 ' you have changed an unrecognized'...
+                  ' font preference (' prefname ') - a restart of MATLAB may'...
+                  ' be required for changes to take effect.'])
+            end
+              
         case 'R' % rect - R0 0 0 0
           %TODO
 %       case '?' % StringList
