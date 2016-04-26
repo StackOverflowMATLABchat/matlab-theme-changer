@@ -1,9 +1,9 @@
 [![License](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer.svg)](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer/blob/master/LICENSE.md) [![Issues](https://img.shields.io/github/issues/StackOverflowMATLABchat/matlab-theme-changer.svg)](https://img.shields.io/github/license/StackOverflowMATLABchat/matlab-theme-changer/issues)
 # MATLAB Theme Changer
-This is a proof-of-concept MATLAB color scheme changer, that works when MATLAB is open.
+This is a proof-of-concept MATLAB color scheme changer that works when MATLAB is open.
 
 ## Usage
-There are currently 2 options to use this code:
+There are currently several options to use this code:
 
 ### Option 1 (basic CLI) ###
 Put `applyPrfFile.m` in your path/cd and supply it with a path to a standard `.prf` file.
