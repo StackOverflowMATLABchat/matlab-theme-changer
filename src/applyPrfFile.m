@@ -16,22 +16,22 @@ for ind1=1:size(C,1)
     preftype = C{ind1,2}(1);
     prefval = C{ind1,2}(2:end);
     switch preftype
-        case 'B'  % boolean
+        case 'B' % boolean
             val = strcmp(prefval,'true');
             com.mathworks.services.Prefs.setBooleanPref(prefname, val);
-        case 'C'  % RGB color
+        case 'C' % RGB color
             val = int32(str2double(prefval));
             com.mathworks.services.Prefs.setRGBColorPref(prefname, val);
             com.mathworks.services.ColorPrefs.notifyColorListeners(prefname);
-        case 'I'  % int
+        case 'I' % int16
             val = int32(str2double(prefval));
             com.mathworks.services.Prefs.setIntegerPref(prefname,val);            
-        case 'J'  % double
+        case 'J' % double / int64
             val = str2double(prefval);
             com.mathworks.services.Prefs.setDoublePref(prefname,val);            
-        case 'S'  % string
+        case 'S' % string
             com.mathworks.services.Prefs.setStringPref(prefname,prefval);            
-        case 'F' % font
+        case 'F' % font - F0 12 Dialog
             if strcmp(prefname,'Desktop.Font.Text')
             	com.mathworks.services.Prefs.setBooleanPref('GeneralTextUseSystemFont', false);
             end
@@ -40,6 +40,10 @@ for ind1=1:size(C,1)
             com.mathworks.services.Prefs.setFontPref(prefname, newFont);
             disp(['[' 8 '- Notice:]' 8 ' you have changed a font preference (' prefname ...
                 ') - a restart of MATLAB is required to see changes.'])
+        case 'R' % rect - R0 0 0 0
+          %TODO
+%       case '?' % StringList
+          %TODO
         otherwise
             % Unhandled property - ignored.
     end
