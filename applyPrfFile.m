@@ -1,4 +1,4 @@
-function ApplyPrfFile(prfFullpath)
+function applyPrfFile(prfFullpath)
 %% Input checking
 if ~nargin
    disp('No .prf file provided - aborting...'); return 

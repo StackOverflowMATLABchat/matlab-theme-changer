@@ -1,4 +1,4 @@
-classdef colorSettingsEnum
+classdef ColorSettingsEnum
     enumeration
         TEXT_COLOR ('ColorsText'),
         BACKGROUND_COLOR ('ColorsBackground'),

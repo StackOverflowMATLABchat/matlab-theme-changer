@@ -5,8 +5,8 @@ classdef MatlabTheme < handle
     end    
     
     methods (Access = public, Static = true)
-        function ApplyTheme()
-            MatlabTheme.ApplyColorSettings();
+        function applyTheme()
+            MatlabTheme.applyColorSettings();
         end
     end
     
@@ -19,7 +19,7 @@ classdef MatlabTheme < handle
             end
         end
         
-        function ApplyColorSettings()
+        function applyColorSettings()
             colorSettingVec = MatlabTheme.makeCsVec();
             % Make sure "use system colors" is off
             MatlabTheme.turnOffSystemColors();

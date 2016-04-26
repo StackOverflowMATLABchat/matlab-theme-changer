@@ -1,4 +1,6 @@
-function MatlabThemeChooser
+function matlabThemeChooser
+% NOTE: In order to run, this requires the GUI Layout Toolbox, found at:
+% http://www.mathworks.com/matlabcentral/fileexchange/27758-gui-layout-toolbox
 f = figure('Menubar','none', 'NumberTitle','off', ...
     'Name','MATLAB Theme Editor', 'Position',[810 352 275 578]);
 padding = {'Padding',5, 'Spacing',5};
