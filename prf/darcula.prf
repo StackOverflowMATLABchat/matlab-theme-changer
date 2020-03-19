@@ -15,6 +15,7 @@ Colors_M_Strings=C-9795751
 Colors_M_UnterminatedStrings=C-4440260
 Colors_M_SystemCommands=C-7707333
 Colors_M_Errors=C-6411993
+Colors_M_TypeSection=C-14739
 Color_CmdWinErrors=C-38040
 Color_CmdWinWarnings=C-26368
 Colors_HTML_HTMLLinks=C-14124066
